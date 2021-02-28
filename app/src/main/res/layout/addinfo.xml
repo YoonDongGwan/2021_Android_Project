@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radio1"
+            style="Noto Sans CJK KR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="복수전공(연계전공)"
+            android:textSize="14dp"
+            android:theme="@style/customRadioBtn"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            style="Noto Sans CJK KR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:paddingStart="0dp"
+            android:text="부전공"
+            android:textSize="14dp"
+            android:theme="@style/customRadioBtn" />
+    </RadioGroup>
+
+
+
+    <Button
+        android:id="@+id/btn_FM"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="학과를 입력해주세요"
+        style="Noto Sans CJK KR"
+        android:textSize="14dp"
+        android:drawableRight="@drawable/ic_undertry"
+        android:gravity="start|center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view3"
+        android:paddingStart="0dp"
+        android:paddingBottom="14.5dp"
+        android:paddingEnd="0dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="0dp"
+        android:background="#00000000"
+        android:textColor="#767676"
+        />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F0F0F0"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        />
+
+
+    <ImageButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="27.20dp"
+        android:layout_marginTop="5dp"
+        android:background="#00000000"
+        android:paddingTop="4.93dp"
+        android:paddingBottom="4.93dp"
+        android:paddingEnd="4.93dp"
+        android:paddingStart="4.93dp"
+        android:tint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cancle" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="동일학과 선택은 불가능합니다."
+        android:textSize="12dp"
+        android:textColor="#FF0000"
+        app:layout_constraintTop_toBottomOf="@id/btn_FM"
+        android:layout_marginTop="7.5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="22dp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
