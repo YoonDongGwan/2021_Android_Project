@@ -1,5 +1,6 @@
 package com.example.inucalc;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     aiFragment aiFragment = new aiFragment();
     cellFragment cellFragment = new cellFragment();
     mypageFragment mypageFragment = new mypageFragment();
+    public int check=0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,12 +52,21 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.cell:
-                        transaction.replace(R.id.framelayout, cellFragment).commitAllowingStateLoss();
+                         transaction.replace(R.id.framelayout, cellFragment).commitAllowingStateLoss();
 
                         break;
 
                     case R.id.ai:
-                        transaction.replace(R.id.framelayout, aiFragment).commitAllowingStateLoss();
+                       /* if(check==1)
+                        {
+                            transaction.replace(R.id.framelayout, aiFragment).commitAllowingStateLoss();
+                        }
+                        else
+                        {
+                            check=1;*/
+                            Intent intent = new Intent(getApplicationContext(), CalcuActivity.class);
+                            startActivity(intent);
+                    /*    }*/
                         break;
 
                     case R.id.mypage:

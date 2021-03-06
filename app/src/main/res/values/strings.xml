@@ -93,6 +93,25 @@
         <item>20학번</item>
         <item>21학번</item>
     </string-array>
+    
+    <string-array name="hope_grade">
+        <item>4.5</item>
+        <item>4.4</item>
+        <item>4.3</item>
+        <item>4.2</item>
+        <item>4.1</item>
+        <item>4.0</item>
+        <item>3.9</item>
+        <item>3.8</item>
+        <item>3.7</item>
+        <item>3.6</item>
+        <item>3.5</item>
+        <item>3.4</item>
+        <item>3.3</item>
+        <item>3.2</item>
+        <item>3.1</item>
+        <item>3.0</item>
+    </string-array>
 
 
 
