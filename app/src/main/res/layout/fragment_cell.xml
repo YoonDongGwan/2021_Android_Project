@@ -42,6 +42,7 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:onClick="onButton1Clicked"
                 android:text=" 1학년 1학기"
                 android:textColor="#0B0A0A"
                 android:textSize="16dp"
@@ -53,6 +54,7 @@
                 android:layout_height="match_parent"
                 android:background="#DADADA"
                 android:backgroundTint="@color/white"
+                android:onClick="onButton2Clicked"
                 android:text=" 1학년 2학기"
                 android:textColor="#0C0C0C"
                 android:textSize="16dp" />
@@ -63,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:onClick="onButton3Clicked"
                 android:text=" 2학년 1학기"
                 android:textSize="16dp" />
 
@@ -72,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:onClick="onButton4Clicked"
                 android:text=" 2학년 2학기"
                 android:textSize="16dp"
                 app:iconTint="#FFFFFF" />
@@ -83,6 +87,7 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:onClick="onButton5Clicked"
                 android:text=" 3학년 1학기"
                 android:textSize="16dp" />
 
@@ -93,6 +98,7 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:onClick="onButton6Clicked"
                 android:text=" 3학년 2학기 "
                 android:textColor="#070707"
                 android:textSize="16dp" />
@@ -104,6 +110,7 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:onClick="onButton7Clicked"
                 android:text=" 4학년 1학기 "
                 android:textColor="#040404"
                 android:textSize="16dp" />
@@ -115,6 +122,7 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:onClick="onButton8Clicked"
                 android:text=" 4학년 2학기 "
                 android:textColor="#000000"
                 android:textSize="16dp" />
@@ -167,12 +175,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_0"
         android:layout_width="79dp"
         android:layout_height="45dp"
         android:layout_marginStart="300dp"
         android:layout_marginTop="144dp"
         android:background="#FFFFFF"
+        android:onClick="onButton0Clicked"
         android:text="수정하기"
         android:textAlignment="center"
         android:textAllCaps="false"

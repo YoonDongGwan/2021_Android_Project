@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class mypageFragment extends Fragment {
+public class   mypageFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
