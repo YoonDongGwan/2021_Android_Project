@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -49,6 +50,10 @@ public class StartActivity extends AppCompatActivity {
         button = findViewById(R.id.addMajor);
         btn_page1=findViewById(R.id.btn_page1);
 
+        SharedPreferences check = getSharedPreferences("check",MODE_PRIVATE);
+        SharedPreferences.Editor editor = check.edit();
+        editor.putBoolean("page",false);
+        editor.commit();
 
         // 전공, 학번 선택
         btn_m.setOnClickListener(new View.OnClickListener() {

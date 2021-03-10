@@ -23,6 +23,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class CalcuActivity extends AppCompatActivity {
 
     String[] List;
@@ -117,11 +119,17 @@ public class CalcuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(flag==1)
                 {
-                   /* aiFragment aiFragment = new aiFragment();
+              /*      aiFragment aiFragment = new aiFragment();
                     FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.framelayout, aiFragment).commitAllowingStateLoss();
-              */
+                  //  FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                 //   fragmentTransaction.replace(R.id.framelayout, aiFragment).commitAllowingStateLoss();
+                    FragmentTransaction transaction = fragmentManager.beginTransaction();
+                    transaction.replace(R.id.framelayout, aiFragment).commitAllowingStateLoss();
+*/
+
+                   Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });

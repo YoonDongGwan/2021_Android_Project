@@ -2,6 +2,7 @@ package com.example.inucalc;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     aiFragment aiFragment = new aiFragment();
     cellFragment cellFragment = new cellFragment();
     mypageFragment mypageFragment = new mypageFragment();
-    public int check=0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("major",maj);
         bundle.putString("sId",sId);
+
         mypageFragment.setArguments(bundle);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.framelayout, homeFragment).commitAllowingStateLoss();
@@ -57,16 +58,20 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.ai:
-                       /* if(check==1)
+                        SharedPreferences check = getSharedPreferences("check",MODE_PRIVATE);
+                        Boolean C = check.getBoolean("page",false);
+                        if(C==true)
                         {
                             transaction.replace(R.id.framelayout, aiFragment).commitAllowingStateLoss();
                         }
                         else
                         {
-                            check=1;*/
+                            SharedPreferences.Editor editor1 = check.edit();
+                            editor1.putBoolean("page",true);
+                            editor1.commit();
                             Intent intent = new Intent(getApplicationContext(), CalcuActivity.class);
                             startActivity(intent);
-                    /*    }*/
+                        }
                         break;
 
                     case R.id.mypage:

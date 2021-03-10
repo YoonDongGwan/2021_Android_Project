@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@drawable/view_shape2"
+
+    >
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="Noto Sans CJK KR"
+        android:textSize="16dp"
+        android:text="3학년 1학기"
+        android:layout_gravity="center"
+        android:includeFontPadding="false"
+        android:layout_marginStart="16dp"
+        />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="Noto Sans CJK KR"
+        android:textSize="16dp"
+        android:text="전공"
+        android:layout_gravity="center"
+        android:includeFontPadding="false"
+        android:layout_marginStart="59dp"
+        />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="Noto Sans CJK KR"
+        android:textSize="16dp"
+        android:text="5전공"
+        android:layout_gravity="center"
+        android:includeFontPadding="false"
+        android:layout_marginStart="10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="Noto Sans CJK KR"
+        android:textSize="16dp"
+        android:text="교양"
+        android:layout_gravity="center"
+        android:includeFontPadding="false"
+        android:layout_marginStart="16dp"
+        />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="Noto Sans CJK KR"
+        android:textSize="16dp"
+        android:text="5전공"
+        android:layout_gravity="center"
+        android:includeFontPadding="false"
+        android:layout_marginStart="10dp"
+        />
+    <ImageView
+        android:id="@+id/btn_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:includeFontPadding="false"
+        android:layout_marginStart="26dp"
+        app:srcCompat="@drawable/ic_undertry"
+        android:background="#00000000" />
+</LinearLayout>
