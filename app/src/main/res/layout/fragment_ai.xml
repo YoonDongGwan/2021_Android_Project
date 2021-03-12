@@ -142,19 +142,44 @@
                         android:layout_marginEnd="116dp"
                         android:includeFontPadding="false"
                         />
+
+
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="남은학기 시간표추천"
-                android:includeFontPadding="false"
-                style="Noto Sans CJK KR"
-                android:textStyle="bold"
-                android:textSize="16dp"
-                android:textColor="@color/black"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="남은학기 시간표추천"
+                    android:includeFontPadding="false"
+                    style="Noto Sans CJK KR"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:gravity="center"
+                    />
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_refresh"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="20.55dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -222,7 +247,6 @@
                     android:includeFontPadding="false"
                     android:paddingStart="16dp"
                     android:gravity="right"
-
                     style="Noto Sans CJK KR"
                     android:textSize="14dp"
                     android:textColor="#767676"/>
@@ -256,6 +280,16 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="14.5dp"
                 android:background="#E4E4E4"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+
 
 
 

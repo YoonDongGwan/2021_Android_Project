@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:includeFontPadding="false" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32.91dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전공과목명"
+            android:textSize="14dp"
+            style="Noto Sans CJK KR"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:includeFontPadding="false" />
+        <TextView
+            android:id="@+id/tv22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C+"
+            android:textSize="14dp"
+            style="Noto Sans CJK KR"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:includeFontPadding="false" />
+        <TextView
+            android:id="@+id/tv33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A+"
+            android:textSize="14dp"
+            style="Noto Sans CJK KR"
+            android:textColor="#FCAF17"
+            android:layout_gravity="center"
+            android:includeFontPadding="false" />
+        <TextView
+            android:id="@+id/tv44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.35"
+            android:textSize="14dp"
+            style="Noto Sans CJK KR"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:includeFontPadding="false" />
+    </LinearLayout>
+
+
+</LinearLayout>

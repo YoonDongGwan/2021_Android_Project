@@ -7,6 +7,8 @@ public class Data_ai_recomm {
     private String tv3;
     private String tv4;
     private String tv5;
+    private boolean expendable;
+    private int header;
 
     public Data_ai_recomm(int btn_detail, String tv1, String tv2, String tv3, String tv4, String tv5) {
         this.btn_detail = btn_detail;
@@ -15,6 +17,16 @@ public class Data_ai_recomm {
         this.tv3 = tv3;
         this.tv4 = tv4;
         this.tv5 = tv5;
+        this.expendable = false;
+        this.header = header;
+    }
+
+    public boolean isExpendable() {
+        return expendable;
+    }
+
+    public void setExpendable(boolean expendable) {
+        this.expendable = expendable;
     }
 
     public int getBtn_detail() {
@@ -63,5 +75,18 @@ public class Data_ai_recomm {
 
     public void setTv5(String tv5) {
         this.tv5 = tv5;
+    }
+
+    @Override
+    public String toString() {
+        return "Data_ai_recomm{" +
+                "btn_detail=" + btn_detail +
+                ", tv1='" + tv1 + '\'' +
+                ", tv2='" + tv2 + '\'' +
+                ", tv3='" + tv3 + '\'' +
+                ", tv4='" + tv4 + '\'' +
+                ", tv5='" + tv5 + '\'' +
+                ", expendable=" + expendable +
+                '}';
     }
 }

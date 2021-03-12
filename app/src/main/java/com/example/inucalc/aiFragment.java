@@ -31,6 +31,12 @@ public class aiFragment extends Fragment {
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
 
+    private ArrayList<Data_ai_recomm2> arrayList2;
+    private Adapter_ai_recomm2 mainAdapter2;
+    private RecyclerView recyclerView2;
+    private LinearLayoutManager linearLayoutManager2;
+
+
     ImageButton ib_modify;
 
     @Override
@@ -38,22 +44,24 @@ public class aiFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_ai, container, false);
-
-        recyclerView = v.findViewById(R.id.rv);
         ib_modify = v.findViewById(R.id.ib_modify);
 
-        linearLayoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView = v.findViewById(R.id.rv);
+        initData();
+        setRecyclerView();
+        recyclerView2 = v.findViewById(R.id.rv2);
+        linearLayoutManager2 = new LinearLayoutManager(getContext());
+        recyclerView2.setLayoutManager(linearLayoutManager2);
+        arrayList2 = new ArrayList<>();
+        mainAdapter2 = new Adapter_ai_recomm2(arrayList2);
+        recyclerView2.setAdapter(mainAdapter2);   // 어댑터로부터 가져온 것을 리사이클러뷰에 셋팅
 
-        arrayList = new ArrayList<>();
 
-        mainAdapter = new Adapter_ai_recomm(arrayList);
-        recyclerView.setAdapter(mainAdapter);   // 어댑터로부터 가져온 것을 리사이클러뷰에 셋팅
 
         for (int i = 0; i < 10; i++) {
-            Data_ai_recomm mainData = new Data_ai_recomm(R.drawable.ic_undertry, "3학년 1학기", "전공", "5과목", "교양", "5과목");
-            arrayList.add(mainData);
-            mainAdapter.notifyDataSetChanged(); // 새로 고침까지 완료
+            Data_ai_recomm2 mainData2 = new Data_ai_recomm2( "전공과목명", "C+", "A+", "4.35");
+            arrayList2.add(mainData2);
+            mainAdapter2.notifyDataSetChanged(); // 새로 고침까지 완료
         }
 
         ib_modify.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +72,22 @@ public class aiFragment extends Fragment {
             }
         });
 
+
         return v;
+    }
+    private void setRecyclerView() {
+        mainAdapter = new Adapter_ai_recomm(arrayList);
+        recyclerView.setAdapter(mainAdapter);
+        recyclerView.setHasFixedSize(true);
+    }
+
+    private void initData() {
+        arrayList = new ArrayList<>();
+        for(int i=0;i<10;i++)
+        {
+            arrayList.add(new Data_ai_recomm(R.drawable.ic_undertry, "3학년 1학기", "전공", "5과목", "교양", "5과목"));
+            // mainAdapter.notifyDataSetChanged();
+        }
     }
 }
 

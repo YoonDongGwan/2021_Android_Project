@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.method.KeyListener;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,9 +49,12 @@ public class CalcuActivity extends AppCompatActivity {
         ImageButton btn_back=findViewById(R.id.btn_back);
         btn_page=findViewById(R.id.btn_page2);
 
+
+
         et.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
+                //et.setKeyListener((KeyListener)et.getTag());
                 if(keyCode==event.KEYCODE_ENTER)
                 {
                     et.setInputType(EditorInfo.TYPE_NULL);
@@ -62,7 +66,7 @@ public class CalcuActivity extends AppCompatActivity {
                         flagCheck();
 
                     } catch(NumberFormatException e){
-                        Toast.makeText(getApplicationContext(), "숫자만 입력하세요", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "숫자만 입력하세요", Toast.LENGTH_SHORT).show();
                         flag1=0;
                     }
                 }

@@ -1,10 +1,15 @@
 package com.example.inucalc;
 
+import android.content.Context;
+import android.graphics.Color;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,17 +24,24 @@ public class Adapter_ai_recomm extends RecyclerView.Adapter<Adapter_ai_recomm.Cu
     public Adapter_ai_recomm(ArrayList<Data_ai_recomm> arrayList) {
         this.arrayList = arrayList;
     }
-
+    private Context context;
+    // Item의 클릭 상태를 저장할 array 객체
+    private SparseBooleanArray selectedItems = new SparseBooleanArray();
+    // 직전에 클릭됐던 Item의 position
+    private int prePosition = -1;
+    ImageView iv;
     @NonNull
     @Override
     public Adapter_ai_recomm.CustomerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        context = parent.getContext();
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_recomm,parent,false);
-        CustomerViewHolder holder = new CustomerViewHolder(view);
-        return holder;
+        return new CustomerViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Adapter_ai_recomm.CustomerViewHolder holder, int position) {
+        Data_ai_recomm data_ai_recomm = arrayList.get(position);
+
         holder.btn_detail.setImageResource(arrayList.get(position).getBtn_detail());
         holder.tv1.setText(arrayList.get(position).getTv1());
         holder.tv2.setText(arrayList.get(position).getTv2());
@@ -37,39 +49,72 @@ public class Adapter_ai_recomm extends RecyclerView.Adapter<Adapter_ai_recomm.Cu
         holder.tv4.setText(arrayList.get(position).getTv4());
         holder.tv5.setText(arrayList.get(position).getTv5());
 
-        //아이템뷰가 클릭이 되었을 때
-        holder.itemView.setTag(position);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String curName = holder.tv1.getText().toString();
-                Toast.makeText(v.getContext(),curName,Toast.LENGTH_SHORT).show();
-            }
-        });
+        boolean isExpendable = arrayList.get(position).isExpendable();
+        holder.expendableLayout.setVisibility(isExpendable ? View .VISIBLE : View.GONE);
+
+        if(isExpendable)
+        {
+            holder.header.setBackgroundColor(Color.parseColor("#FCAF17"));
+            holder.tv1.setTextColor(Color.parseColor("#FFFFFF"));
+            holder.btn_detail.setImageResource(R.drawable.ic_uptry);
+            holder.tv2.setTextColor(Color.parseColor("#FCAF17"));
+            holder.tv3.setTextColor(Color.parseColor("#FCAF17"));
+            holder.tv4.setText("이수학점");
+            holder.tv4.setTextColor(Color.parseColor("#FFFFFF"));
+            holder.tv5.setText("19");
+            holder.tv5.setTextColor(Color.parseColor("#FFFFFF"));
+
+        }
+        else
+        {
+            holder.header.setBackgroundColor(Color.parseColor("#F9F9F9"));
+            holder.tv1.setTextColor(Color.parseColor("#000000"));
+            holder.btn_detail.setImageResource(R.drawable.ic_undertry);
+            holder.tv2.setTextColor(Color.parseColor("#767676"));
+            holder.tv3.setTextColor(Color.parseColor("#000000"));
+            holder.tv4.setText("교양");
+            holder.tv4.setTextColor(Color.parseColor("#767676"));
+            holder.tv5.setText("5과목");
+            holder.tv5.setTextColor(Color.parseColor("#000000"));
+
+        }
+
     }
 
 
     @Override
     public int getItemCount() {
-        return (null!= arrayList ? arrayList.size():0);
+        return arrayList.size();
     }
 
     public class CustomerViewHolder extends RecyclerView.ViewHolder {
-        protected ImageView btn_detail;
-        protected TextView tv1;
-        protected TextView tv2;
-        protected TextView tv3;
-        protected TextView tv4;
-        protected TextView tv5;
+        ImageView btn_detail;
+        TextView tv1,tv2,tv3,tv4,tv5;
+        LinearLayout linearLayout;
+        LinearLayout expendableLayout;
+        View header;
 
         public CustomerViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.btn_detail=(ImageView)itemView.findViewById(R.id.btn_detail);
-            this.tv1=(TextView)itemView.findViewById(R.id.tv1);
-            this.tv2 =(TextView)itemView.findViewById(R.id.tv2);
-            this.tv3=(TextView)itemView.findViewById(R.id.tv3);
-            this.tv4=(TextView)itemView.findViewById(R.id.tv4);
-            this.tv5=(TextView)itemView.findViewById(R.id.tv5);
+            btn_detail = (ImageView) itemView.findViewById(R.id.btn_detail);
+            tv1 = (TextView) itemView.findViewById(R.id.tv1);
+            tv2 = (TextView) itemView.findViewById(R.id.tv2);
+            tv3 = (TextView) itemView.findViewById(R.id.tv3);
+            tv4 = (TextView) itemView.findViewById(R.id.tv4);
+            tv5 = (TextView) itemView.findViewById(R.id.tv5);
+            linearLayout = itemView.findViewById(R.id.linearlayout);
+            expendableLayout = itemView.findViewById(R.id.expendableLayout);
+            header = itemView.findViewById(R.id.header);
+
+            linearLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Data_ai_recomm data_ai_recomm = arrayList.get(getAdapterPosition());
+                    data_ai_recomm.setExpendable(!data_ai_recomm.isExpendable());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
         }
     }
 }
+

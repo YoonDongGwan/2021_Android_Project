@@ -74,6 +74,7 @@
         android:background="@null"
         android:cursorVisible="false"
         />
+
     <View
         android:id="@+id/view1"
         android:layout_width="132dp"
