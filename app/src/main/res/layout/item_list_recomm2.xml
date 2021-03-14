@@ -6,22 +6,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:includeFontPadding="false" >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="32.91dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="40dp"
+        android:background="@drawable/view_shape2"
+        android:gravity="center_vertical"
+        >
 
         <TextView
             android:id="@+id/tv11"
+            style="Noto Sans CJK KR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="left"
+            android:includeFontPadding="false"
             android:text="전공과목명"
-            android:textSize="14dp"
-            style="Noto Sans CJK KR"
             android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:includeFontPadding="false" />
+            android:textSize="14dp"
+            />
+
         <TextView
             android:id="@+id/tv22"
             android:layout_width="wrap_content"
@@ -30,8 +33,10 @@
             android:textSize="14dp"
             style="Noto Sans CJK KR"
             android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:includeFontPadding="false" />
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:layout_toStartOf="@id/tv33"
+            android:layout_marginEnd="55dp"/>
         <TextView
             android:id="@+id/tv33"
             android:layout_width="wrap_content"
@@ -40,19 +45,27 @@
             android:textSize="14dp"
             style="Noto Sans CJK KR"
             android:textColor="#FCAF17"
-            android:layout_gravity="center"
-            android:includeFontPadding="false" />
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:layout_toStartOf="@id/tv44"
+            android:layout_marginEnd="49dp"/>
+
         <TextView
             android:id="@+id/tv44"
+            style="Noto Sans CJK KR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:includeFontPadding="false"
             android:text="4.35"
-            android:textSize="14dp"
-            style="Noto Sans CJK KR"
             android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:includeFontPadding="false" />
-    </LinearLayout>
+            android:textSize="14dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="13.5dp"/>
+
+    </RelativeLayout>
+
+
 
 
 </LinearLayout>

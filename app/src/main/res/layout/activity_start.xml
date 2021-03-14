@@ -118,7 +118,7 @@
         android:paddingLeft="0dp"
         android:paddingTop="0dp"
         android:scaleType="center"
-        android:text="전공추가하기"
+        android:text=" 전공추가하기"
         android:textColor="#00A2FF"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"

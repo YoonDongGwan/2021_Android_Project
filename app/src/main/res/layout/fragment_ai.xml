@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/homelayout">
+    android:id="@+id/homelayout"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/tv1"
@@ -22,6 +23,7 @@
         tools:layout_editor_absoluteX="15dp"
         tools:layout_editor_absoluteY="11dp"
         android:includeFontPadding="false"
+
 
         />
 
@@ -223,63 +225,65 @@
                 android:textSize="12dp"
                 android:textColor="#767676"/>
 
-            <LinearLayout
+
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tv7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="과목명"
-                    android:includeFontPadding="false"
-                    android:paddingEnd="92dp"
-                    style="Noto Sans CJK KR"
-                    android:textSize="14dp"
-                    android:textColor="#767676"/>
-                <TextView
-                    android:id="@+id/tv8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="현재 성적"
-                    android:includeFontPadding="false"
-                    android:paddingStart="16dp"
-                    android:gravity="right"
-                    style="Noto Sans CJK KR"
-                    android:textSize="14dp"
-                    android:textColor="#767676"/>
+                android:layout_height="40dp"
+                android:stretchColumns="0"
+                android:gravity="center_vertical">
 
-                <TextView
-                    android:id="@+id/tv9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="목표 성적"
-                    android:includeFontPadding="false"
-                    android:paddingStart="16dp"
-                    style="Noto Sans CJK KR"
-                    android:textSize="14dp"
-                    android:gravity="right"
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
 
-                    android:textColor="#767676"/>
-                <TextView
-                    android:id="@+id/tv10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="예상 학점"
-                    android:includeFontPadding="false"
-                    android:paddingStart="16dp"
-                    style="Noto Sans CJK KR"
-                    android:textSize="14dp"
-                    android:layout_gravity="right"
-                    android:textColor="#767676"/>
-            </LinearLayout>
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_marginTop="14.5dp"
-                android:background="#E4E4E4"/>
+                    <TextView
+                        android:id="@+id/tv7"
+                        style="Noto Sans CJK KR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="left"
+                        android:includeFontPadding="false"
+                        android:text="과목명"
+                        android:textColor="#767676"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/tv8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="현재 성적"
+                        android:includeFontPadding="false"
+                        android:gravity="right"
+                        android:layout_marginEnd="16dp"
+                        style="Noto Sans CJK KR"
+                        android:textSize="14dp"
+                        android:textColor="#767676"/>
+
+                    <TextView
+                        android:id="@+id/tv9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="목표 성적"
+                        android:includeFontPadding="false"
+                        style="Noto Sans CJK KR"
+                        android:textSize="14dp"
+                        android:gravity="right"
+                        android:layout_marginEnd="16dp"
+                        android:textColor="#767676"/>
+                    <TextView
+                        android:id="@+id/tv10"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:text="예상 학점"
+                        android:includeFontPadding="false"
+                        style="Noto Sans CJK KR"
+                        android:textSize="14dp"
+                        android:gravity="right"
+                        android:textColor="#767676"/>
+
+                </TableRow>
+
+            </TableLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv2"
@@ -291,6 +295,101 @@
             </androidx.recyclerview.widget.RecyclerView>
 
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="44dp"
+                android:background="@drawable/view_shape_othercolor3"
+
+                >
+
+                <TextView
+                    android:id="@+id/t2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전체 예상 학점"
+                    tools:layout_editor_absoluteX="89dp"
+                    tools:layout_editor_absoluteY="1dp"
+                    android:textSize="12dp"
+                    style="Noto Sans CJK KR"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="111dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="110dp"
+                    android:includeFontPadding="false"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="@id/t2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="17dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/t3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="116dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="평균"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16dp"
+                        style="Noto Sans CJK KR"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+
+                        android:includeFontPadding="false"
+                        />
+
+                    <TextView
+                        android:id="@+id/t4"
+                        style="Noto Sans CJK KR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="4.43"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/tv3"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginStart="6dp"
+                        tools:layout_editor_absoluteX="153dp"
+                        tools:layout_editor_absoluteY="35dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="점"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16dp"
+                        style="Noto Sans CJK KR"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/tv4"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="116dp"
+                        android:includeFontPadding="false"
+                        />
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </LinearLayout>
