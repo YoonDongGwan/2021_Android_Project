@@ -1,19 +1,22 @@
 package com.example.inucalc;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class grades {
     @PrimaryKey
-    private int semester;
-
+    @NonNull
     private String name;
+
+    private String semester;
     private String score;
     private String sort;
     private int point;
 
-    public grades(int semester, String name, String sort, String score, int point){
+
+    public grades(String semester, String name, String sort, String score, int point){
         this.semester = semester;
         this.name = name;
         this.sort = sort;
@@ -21,7 +24,7 @@ public class grades {
         this.point = point;
     }
 
-    public int getSemester() {
+    public String getSemester() {
         return semester;
     }
 
@@ -37,7 +40,11 @@ public class grades {
         return sort;
     }
 
-    public void setSemester(int semester) {
+    public int getPoint() {
+        return point;
+    }
+
+    public void setSemester(String semester) {
         this.semester = semester;
     }
 
@@ -51,5 +58,9 @@ public class grades {
 
     public void setSort(String sort) {
         this.sort = sort;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
     }
 }
