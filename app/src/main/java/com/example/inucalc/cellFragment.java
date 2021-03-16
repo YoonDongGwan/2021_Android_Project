@@ -1,115 +1,73 @@
 package com.example.inucalc;
 
-import android.content.DialogInterface;
+import android.content.Context;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
+import com.example.inucalc.oneoneFragment;
+import com.example.inucalc.onetwoFragment;
+import com.example.inucalc.twooneFragment;
+import com.example.inucalc.twotwoFragment;
+import com.example.inucalc.threeoneFragment;
+import com.example.inucalc.threetwoFragment;
+import com.example.inucalc.fouroneFragment;
+import com.example.inucalc.fourtwoFragment;
 
 import java.util.ArrayList;
-
-import static android.widget.Toast.LENGTH_LONG;
+import java.util.List;
 
 public class cellFragment extends Fragment {
+    private Context mContext;
+    private TabLayout mTablayout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_cell, container, false);
+        ViewPager2 viewPager = v.findViewById(R.id.viewpager3);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager(),getLifecycle());
+        adapter.addFragment(new oneoneFragment());
+        adapter.addFragment(new onetwoFragment());
+        adapter.addFragment(new twooneFragment());
+        adapter.addFragment(new twotwoFragment());
+        adapter.addFragment(new threeoneFragment());
+        adapter.addFragment(new threetwoFragment());
+        adapter.addFragment(new fouroneFragment());
+        adapter.addFragment(new fourtwoFragment());
+        viewPager.setAdapter(adapter);
+        TabLayout tabLayout = v.findViewById(R.id.tablayout2);
 
-        Button btn_0=v.findViewById(R.id.button_0);
-        Button btn_1=v.findViewById(R.id.button_1);
-        Button btn_2=v.findViewById(R.id.button_2);
-        Button btn_3=v.findViewById(R.id.button_3);
-        Button btn_4=v.findViewById(R.id.button_4);
-        Button btn_5=v.findViewById(R.id.button_5);
-        Button btn_6=v.findViewById(R.id.button_6);
-        Button btn_7=v.findViewById(R.id.button_7);
-        Button btn_8=v.findViewById(R.id.button_8);
-        RecyclerView recyclerView = v.findViewById(R.id.cellRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        RecyclerAdapter adapter = new RecyclerAdapter();
-        recyclerView.setAdapter(adapter);
+        mTablayout=(TabLayout)v.findViewById(R.id.tablayout2);
+        mTablayout.addTab(mTablayout.newTab().setText("홈"));
+        mTablayout.addTab(mTablayout.newTab().setText("게임"));
+        mTablayout.addTab(mTablayout.newTab().setText("영화"));
+        mTablayout.addTab(mTablayout.newTab().setText("도서서"));
 
-        btn_0.setOnClickListener(new View.OnClickListener() {
+       String[] tabLabel = {"1학년 1학기","1학년 2학기","2학년 1학기","2학년 2학기", "3학년 1학기", "3학년 2학기", "4학년 1학기", "4학년 2학기"};
+        new TabLayoutMediator(tabLayout, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
-            public void onClick(View v) {
-
-                // 수정하기가 눌렸을 때
-                Toast.makeText(getActivity(),"0번 버튼",Toast.LENGTH_LONG).show();
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                viewPager.setSaveEnabled(false);
+                tab.setText(tabLabel[position]);
             }
-        });
-
-        btn_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 1학년 1학기가 눌렸을 때
-                Toast.makeText(getActivity(),"1번 버튼", LENGTH_LONG).show();
-            }
-        });
-
-        btn_2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 1학년 2학기가 눌렸을 때
-            }
-        });
-
-        btn_3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 2학년 1학기가 눌렸을 때
-            }
-        });
-
-        btn_4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 2학년 2학기가 눌렸을 때
-            }
-        });
-        btn_5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 3학년 1학기가 눌렸을 때
-            }
-        });
-        btn_6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 3학년 2학기가 눌렸을 때
-            }
-        });
-        btn_7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 4학년 1학기가 눌렸을 때
-            }
-        });
-        btn_8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // 4학년 2학기가 눌렸을 때
-            }
-        });
-
+        }).attach();
         return v;
     }
 

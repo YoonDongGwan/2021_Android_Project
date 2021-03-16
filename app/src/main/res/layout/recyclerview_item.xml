@@ -5,7 +5,7 @@
     android:layout_height="41dp"
     android:orientation="horizontal"
     >
-    <TextView
+    <CheckBox
         android:layout_width="164dp"
         android:layout_height="match_parent"
         android:text="과목명과목명"
@@ -16,7 +16,7 @@
         android:background="@drawable/right_stroke"
         android:paddingStart="16dp"
         >
-    </TextView>
+    </CheckBox>
     <TextView
         android:layout_width="54dp"
         android:layout_height="match_parent"

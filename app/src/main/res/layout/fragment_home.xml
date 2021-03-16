@@ -9,38 +9,65 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="로고이미지"
-        android:textColor="#FCAF17"
+        android:text="학기별 성적"
+        android:textColor="#090909"
         android:gravity="center_vertical"
         android:layout_marginStart="16dp"
         >
     </TextView>
+
+
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
+        android:id="@+id/tablayout1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tablayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        >
+        app:tabIndicatorColor="@color/black"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/black">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="전체" />
+            android:text="1학년 1학기" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="전공별" />
+            android:text="1학년 2학기" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="교양별" />
+            android:text="2학년 1학기" />
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="성적별" />
+            android:text="2학년 2학기" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3학년 1학기" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3학년 2학기" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4학년 1학기" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4학년 2학기" />
+
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
