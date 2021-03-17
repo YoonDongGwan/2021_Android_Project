@@ -3,11 +3,12 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/home_icon"
-        android:title="홈" />
+        android:title="홈"/>
     <item
         android:id="@+id/cell"
         android:icon="@drawable/cell_icon"
-        android:title="학기별" />
+        android:title="학기별"
+        />
     <item
         android:id="@+id/ai"
         android:icon="@drawable/calc_icon"

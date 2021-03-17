@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,20 +8,25 @@
 
     <FrameLayout
         android:id="@+id/framelayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="12"></FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomnavi"
+        app:layout_constraintRight_toRightOf="parent"
+        ></FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavi"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_weight="1"
         android:background="#F9F9F9"
         app:itemIconSize="24dp"
         app:itemIconTint="@color/icon_select_color"
         app:itemTextColor="@color/text_select_color"
         app:labelVisibilityMode="labeled"
-        app:menu="@menu/menu_bottom" />
-</LinearLayout>
+        app:menu="@menu/menu_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
