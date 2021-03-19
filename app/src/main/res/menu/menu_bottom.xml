@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_icon"
+        android:title="홈"/>
+    <item
+        android:id="@+id/cell"
+        android:icon="@drawable/cell_icon"
+        android:title="학기별"
+        />
+    <item
+        android:id="@+id/ai"
+        android:icon="@drawable/calc_icon"
+        android:title="계산기" />
+    <item
+        android:title="마이페이지"
+        
+        android:icon="@drawable/mypage_icon"
+        android:id="@+id/mypage"
+        />
+</menu>

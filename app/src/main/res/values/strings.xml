@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">Project</string>
+
+    <string-array name="majorList">
+        <item>국어국문학과</item>
+        <item>영어영문학과</item>
+        <item>독어독문학과</item>
+        <item>불어불문학과</item>
+        <item>일어일문학과</item>
+        <item>중어중국학과</item>
+        <item>수학과</item>
+        <item>물리학과</item>
+        <item>화학과</item>
+        <item>소비자 아동학과</item>
+        <item>패션산업학과</item>
+        <item>해양학과</item>
+        <item>사회복지학과</item>
+        <item>신문방송학과</item>
+        <item>문헌정보학과</item>
+        <item>창의인재개발학과</item>
+        <item>행정학과</item>
+        <item>정치외교학과</item>
+        <item>경재학과</item>
+        <item>경재학과(야)</item>
+        <item>무역학부</item>
+        <item>무역학부(야)</item>
+        <item>소비자학과</item>
+        <item>기계공학과</item>
+        <item>기계공학과(야)</item>
+        <item>메카트로닉스공학과</item>
+        <item>전기공학과</item>
+        <item>전자공학과</item>
+        <item>전자공학과(야)</item>
+        <item>산업경영공학과</item>
+        <item>안전공학과</item>
+        <item>신소재공학과</item>
+        <item>에너지화학공학과</item>
+        <item>컴퓨터공학부</item>
+        <item>검퓨터공학부(야)</item>
+        <item>정보통신공학과</item>
+        <item>임베디드시스템공학과</item>
+        <item>경영학부</item>
+        <item>세무회계학과</item>
+        <item>조형예술학부</item>
+        <item>한국화전공</item>
+        <item>서양화전공</item>
+        <item>디자인학부</item>
+        <item>공연예술학과</item>
+        <item>체육학부</item>
+        <item>운동건강학부</item>
+        <item>국어교육과</item>
+        <item>영어교육과</item>
+        <item>수학교육과</item>
+        <item>체육교육과</item>
+        <item>유아교육과</item>
+        <item>역사교육과</item>
+        <item>윤리교육과</item>
+        <item>도시행정학과</item>
+        <item>도시건축학부</item>
+        <item>건축공학전공</item>
+        <item>도시건축학전공</item>
+        <item>건설환경공학부</item>
+        <item>도시공학과</item>
+        <item>도시환경공학부</item>
+        <item>환경공학전공</item>
+        <item>생명과학부</item>
+        <item>생명과학전공</item>
+        <item>분자의생명전공</item>
+        <item>생명공학부</item>
+        <item>생명공학전공</item>
+        <item>나노바이오전공</item>
+        <item>동북아국제통상학부</item>
+        <item>한국통상전공</item>
+        <item>법학부</item>
+        <item>광전자공학전공(연계)</item>
+        <item>물류학전공(연계)</item>
+        <item>인공지능소프트웨어연계전공</item>
+        <item>MICE,스포츠및관광연계전공</item>
+        <item>국제개발협력연계전공</item>
+        <item>창의적디자인연계전공</item>
+        <item>뷰티산업연계전공</item>
+        <item>인문문화예술기획연계전공</item>
+        <item>소셜데이터사이언스연계전공</item>
+    </string-array>
+
+    <string-array name="sIDList">
+        <item>14학번</item>
+        <item>15학번</item>
+        <item>16학번</item>
+        <item>17학번</item>
+        <item>18학번</item>
+        <item>19학번</item>
+        <item>20학번</item>
+        <item>21학번</item>
+    </string-array>
+    
+    <string-array name="hope_grade">
+        <item>4.5</item>
+        <item>4.4</item>
+        <item>4.3</item>
+        <item>4.2</item>
+        <item>4.1</item>
+        <item>4.0</item>
+        <item>3.9</item>
+        <item>3.8</item>
+        <item>3.7</item>
+        <item>3.6</item>
+        <item>3.5</item>
+        <item>3.4</item>
+        <item>3.3</item>
+        <item>3.2</item>
+        <item>3.1</item>
+        <item>3.0</item>
+    </string-array>
+
+    <string-array name="goal_grade">
+        <item>A+</item>
+        <item>A0</item>
+        <item>B+</item>
+        <item>B0</item>
+    </string-array>
+
+</resources>

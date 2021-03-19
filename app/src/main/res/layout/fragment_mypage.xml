@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    >
+
+    <TextView
+        android:layout_width="85dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:includeFontPadding="false"
+        android:id="@+id/textview_mypage"
+        android:text="마이페이지"
+        style="Noto Sans CJK KR"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="18dp"></TextView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="328dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/rounded_corner"
+        android:id="@+id/mypage_info"
+        app:layout_constraintTop_toBottomOf="@+id/textview_mypage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/major"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            style="Noto Sans CJK KR"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="16dp"
+            android:includeFontPadding="false"
+            android:textColor="#767676"
+            android:id="@+id/sId"
+            android:textSize="12dp"
+            style="Noto Sans CJK KR"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/major"></TextView>
+
+        <Button
+            android:id="@+id/btn_uInfo"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/setting_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF"
+        android:gravity="left|center_vertical"
+        android:paddingStart="16dp"
+        android:text="졸업요건"
+        android:id="@+id/mypage_btn1"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        style="Noto Sans CJK KR"
+        app:layout_constraintTop_toBottomOf="@+id/mypage_info"
+        ></Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="#FFFFFF"
+        android:gravity="left|center_vertical"
+        android:paddingStart="16dp"
+        android:text="설정"
+        android:id="@+id/mypage_btn2"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        style="Noto Sans CJK KR"
+        app:layout_constraintTop_toBottomOf="@+id/mypage_btn1"
+        ></Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="#FFFFFF"
+        android:gravity="left|center_vertical"
+        android:paddingStart="16dp"
+        android:text="버전 정보"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        style="Noto Sans CJK KR"
+        app:layout_constraintTop_toBottomOf="@+id/mypage_btn2"
+        ></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>
