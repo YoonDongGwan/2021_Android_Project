@@ -80,7 +80,7 @@ public class thirdFragment extends Fragment {
                 if (sum_point != null) {
                     point_sum = sum_point;
                     total_point.setText(point_sum + "");
-                    rest_point.setText(55 - point_sum + "");
+                    rest_point.setText(55 - point_sum + "학점");
                 }
             }
         });
