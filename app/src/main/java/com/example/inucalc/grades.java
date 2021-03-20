@@ -6,8 +6,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class grades {
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    @PrimaryKey
     @NonNull
     private String name;
     private String semester;
@@ -24,13 +23,6 @@ public class grades {
         this.point = point;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getSemester() {
         return semester;
     }
@@ -74,7 +66,6 @@ public class grades {
     @Override
     public String toString() {
         return "grades{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", semester='" + semester + '\'' +
                 ", score='" + score + '\'' +

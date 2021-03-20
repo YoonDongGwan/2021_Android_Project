@@ -12,11 +12,23 @@ import java.util.List;
 @Dao
 public interface gradesDAO {
     @Query("SELECT * FROM grades")
-    List<grades> getAll();
+    LiveData<List<grades>> getAll();
     @Query("SELECT name,score FROM grades WHERE score != 'A+' and score != 'A0' and score != 'B+' and score != 'B0'")
     public List<retakeTuple> retack();
     @Query("SELECT count (distinct semester) FROM grades ")
     Integer semCnt();
+    @Query("SELECT score FROM grades")
+    LiveData<List<String>> getScore();
+    @Query("SELECT SUM(point) FROM grades")
+    LiveData<Integer> getPoint();
+    @Query("SELECT score FROM grades WHERE sort='전선' or sort='전필'")
+    LiveData<List<String>> getMajorScore();
+    @Query("SELECT SUM(point) FROM grades WHERE sort='전선' or sort='전필'" )
+    LiveData<Integer> getMajorPoint();
+    @Query("SELECT score FROM grades WHERE sort='교선' or sort='교필'")
+    LiveData<List<String>> getElecScore();
+    @Query("SELECT SUM(point) FROM grades WHERE sort='교선' or sort='교필'" )
+    LiveData<Integer> getElecPoint();
     @Insert
     void insert(grades db);
     @Update
