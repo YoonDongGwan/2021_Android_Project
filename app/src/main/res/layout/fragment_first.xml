@@ -66,6 +66,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_all"
             app:layout_constraintLeft_toLeftOf="parent"
             android:textColor="#000000"
+            android:id="@+id/total_score"
             android:text="0.00"
             android:textSize="49dp"
             android:includeFontPadding="false"
@@ -102,6 +103,7 @@
                 android:textSize="22dp"
                 android:textColor="#000000"
                 android:text="101"
+                android:id="@+id/total_point"
                 android:includeFontPadding="false"
                 >
             </TextView>
@@ -138,6 +140,7 @@
                 android:textColor="#000000"
                 android:text=" 34학점"
                 style="Noto Sans CJK KR"
+                android:id="@+id/rest_point"
                 android:includeFontPadding="false"
                 >
             </TextView>

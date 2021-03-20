@@ -23,8 +23,15 @@ public class mypageFragment extends Fragment {
         Bundle bundle = getArguments();
         TextView major = v.findViewById(R.id.major);
         TextView stuId = v.findViewById(R.id.sId);
-        major.setText(bundle.getString("major"));
+        String submajor = bundle.getString("subMajor");
+        if(submajor != null){
+        major.setText(bundle.getString("major")+" / "+submajor);
+        }
+        else{
+            major.setText(bundle.getString("major"));
+        }
         stuId.setText(bundle.getString("sId"));
+
         return v;
     }
 }

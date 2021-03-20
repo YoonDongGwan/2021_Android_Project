@@ -34,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String maj = intent.getStringExtra("major");
         String sId = intent.getStringExtra("sId");
+        String submajor = intent.getStringExtra("subMajor");
         Bundle bundle = new Bundle();
         bundle.putString("major",maj);
         bundle.putString("sId",sId);
+        bundle.putString("subMajor",submajor);
 
         mypageFragment.setArguments(bundle);
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

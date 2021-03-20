@@ -24,7 +24,7 @@ public class StartActivity extends AppCompatActivity {
     Button btn_s;
     Button button;
     Button btn_page1;
-
+    Button btn_FM = null;
     AlertDialog.Builder builder;
 
     String[] List;
@@ -103,7 +103,7 @@ public class StartActivity extends AppCompatActivity {
 
 
                 // 복수전공 추가
-                Button btn_FM = findViewById(R.id.btn_FM);
+                btn_FM = findViewById(R.id.btn_FM);
                 btn_FM.setOnClickListener(new View.OnClickListener() {
                     int i=2;
                     String ti="전공선택";
@@ -135,6 +135,9 @@ public class StartActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("major", btn_m.getText().toString());
                     intent.putExtra("sId", btn_s.getText().toString());
+                    if(btn_FM!=null&&(btn_FM.getText().toString()!=null)){
+                    intent.putExtra("subMajor",btn_FM.getText().toString());
+                    }
                     startActivity(intent);
                     finish();
                 }
