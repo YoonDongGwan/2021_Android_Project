@@ -112,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:text="24%"
+                android:id="@+id/A_plus_percent"
                 android:includeFontPadding="false"
                 style="Noto Sans CJK KR"
                 ></TextView>
@@ -144,6 +145,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
+                    android:id="@+id/A_zero_percent"
                     style="Noto Sans CJK KR"
                     ></TextView>
             </LinearLayout>
@@ -181,6 +183,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
+                    android:id="@+id/B_plus_percent"
                     style="Noto Sans CJK KR"
                     ></TextView>
             </LinearLayout>
@@ -212,6 +215,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
+                    android:id="@+id/B_zero_percent"
                     style="Noto Sans CJK KR"
                     ></TextView>
             </LinearLayout>
@@ -249,6 +253,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
+                    android:id="@+id/C_plus_percent"
                     style="Noto Sans CJK KR"
                     ></TextView>
             </LinearLayout>
@@ -280,6 +285,7 @@
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
+                    android:id="@+id/C_zero_percent"
                     style="Noto Sans CJK KR"
                     ></TextView>
             </LinearLayout>

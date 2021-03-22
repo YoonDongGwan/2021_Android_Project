@@ -29,6 +29,8 @@ public interface gradesDAO {
     LiveData<List<String>> getElecScore();
     @Query("SELECT SUM(point) FROM grades WHERE sort='교선' or sort='교필'" )
     LiveData<Integer> getElecPoint();
+    @Query("SELECT score AS grade, COUNT(*) AS percent FROM grades GROUP BY score")
+    LiveData<List<percent>> getGradesCount();
     @Insert
     void insert(grades db);
     @Update
