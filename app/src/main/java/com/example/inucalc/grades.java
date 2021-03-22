@@ -1,7 +1,10 @@
 package com.example.inucalc;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -14,34 +17,15 @@ public class grades {
     private String score;
     private String sort;
     private int point;
+    @Nullable
+    private String reInfo=null;
 
-
-    public grades(String semester, String name, String sort, String score, int point){
-        this.semester = semester;
+    public grades(@NonNull String semester,String name, String sort, String score,  int point) {
         this.name = name;
-        this.sort = sort;
+        this.semester = semester;
         this.score = score;
+        this.sort = sort;
         this.point = point;
-    }
-
-    public String getSemester() {
-        return semester;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getScore() {
-        return score;
-    }
-
-    public String getSort() {
-        return sort;
-    }
-
-    public int getPoint() {
-        return point;
     }
 
     public int getId() {
@@ -52,34 +36,53 @@ public class grades {
         this.id = id;
     }
 
+    @NonNull
+    public String getName() {
+        return name;
+    }
+
+    public void setName(@NonNull String name) {
+        this.name = name;
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
     public void setSemester(String semester) {
         this.semester = semester;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getScore() {
+        return score;
     }
 
-    public void setScore(String grade) {
+    public void setScore(String score) {
         this.score = score;
+    }
+
+    public String getSort() {
+        return sort;
     }
 
     public void setSort(String sort) {
         this.sort = sort;
     }
 
+    public int getPoint() {
+        return point;
+    }
+
     public void setPoint(int point) {
         this.point = point;
     }
 
-    @Override
-    public String toString() {
-        return "grades{" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", semester='" + semester + '\'' +
-                ", score='" + score + '\'' +
-                ", sort='" + sort + '\'' +
-                ", point=" + point +
-                '}';
+    @Nullable
+    public String getReInfo() {
+        return reInfo;
+    }
+
+    public void setReInfo(@Nullable String reInfo) {
+        this.reInfo = reInfo;
     }
 }

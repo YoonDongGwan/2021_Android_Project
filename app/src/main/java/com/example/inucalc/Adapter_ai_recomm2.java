@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,8 @@ public class Adapter_ai_recomm2 extends RecyclerView.Adapter<Adapter_ai_recomm2.
     private ArrayList<Data_ai_recomm2> arrayList2;
     java.util.List<retakeTuple> List = null;
     String[] list;
+    String reinfo;
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView tv11,tv22,tv44;
 
@@ -47,7 +50,8 @@ public class Adapter_ai_recomm2 extends RecyclerView.Adapter<Adapter_ai_recomm2.
     public void onBindViewHolder(@NonNull Adapter_ai_recomm2.ViewHolder holder, int position) {
         holder.tv11.setText(List.get(position).getName());
         holder.tv22.setText(List.get(position).getScore());
-        holder.btn33.setText(List.get(position).getScore());
+        if((reinfo=List.get(position).getReInfo())==null) { reinfo="A+"; }
+        holder.btn33.setText(reinfo);
         holder.tv44.setText("3.25");
         holder.btn33.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +63,14 @@ public class Adapter_ai_recomm2 extends RecyclerView.Adapter<Adapter_ai_recomm2.
                 holder.builder.setItems(list, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        holder.btn33.setText(list[which]);
+                        reinfo=list[which];
+                        holder.btn33.setText(reinfo);
+
+                        AppDatabase db = Room.databaseBuilder(v.getContext(),AppDatabase.class,"grades")
+                                .allowMainThreadQueries()
+                                .build();
+                        // reInfo update
+                        db.gradesDAO().setReInfo(List.get(position).getName(),reinfo);
                     }
                 });
                 AlertDialog alertDialog = holder.builder.create();
