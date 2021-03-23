@@ -13,10 +13,15 @@ import java.util.List;
 public interface gradesDAO {
     @Query("SELECT * FROM grades")
     LiveData<List<grades>> getAll();
-    @Query("SELECT name,score FROM grades WHERE score != 'A+' and score != 'A0' and score != 'B+' and score != 'B0'")
+    @Query("SELECT name,score,reInfo FROM grades WHERE score != 'A+' and score != 'A0' and score != 'B+' and score != 'B0'")
     public List<retakeTuple> retack();
     @Query("SELECT count (distinct semester) FROM grades ")
     Integer semCnt();
+    @Query("SELECT reInfo FROM grades WHERE name=:name")
+    public String loadReInfo(String name);
+    @Query("UPDATE grades SET reInfo=:reInfo WHERE name=:name")
+    public void setReInfo(String name, String reInfo);
+
     @Query("SELECT score FROM grades")
     LiveData<List<String>> getScore();
     @Query("SELECT SUM(point) FROM grades")
@@ -29,8 +34,6 @@ public interface gradesDAO {
     LiveData<List<String>> getElecScore();
     @Query("SELECT SUM(point) FROM grades WHERE sort='교선' or sort='교필'" )
     LiveData<Integer> getElecPoint();
-    @Query("SELECT score AS grade, COUNT(*) AS percent FROM grades GROUP BY score")
-    LiveData<List<percent>> getGradesCount();
     @Insert
     void insert(grades db);
     @Update
