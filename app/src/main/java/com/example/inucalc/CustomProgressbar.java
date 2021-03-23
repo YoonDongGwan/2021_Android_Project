@@ -12,16 +12,18 @@ import android.widget.ProgressBar;
 import androidx.lifecycle.Observer;
 import androidx.room.Room;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomProgressbar extends ProgressBar {
 
-    private int mWidth = 20;    //프로그래스바 굵기
+    private int mWidth = 20;
     private final RectF rectF = new RectF();
-    private final Paint progressPaint = new Paint();//프로그래스바
+    private final Paint progressPaint = new Paint();
     List<percent> list;
-    int sum = 0;
     float count;
+    List<Float> test = new ArrayList<>();
+
     public CustomProgressbar(Context context) {
 
         super(context);
@@ -40,51 +42,52 @@ public class CustomProgressbar extends ProgressBar {
         init(attrs, defStyleAttr);
     }
 
-    public void init(AttributeSet attrs, int style){
+    public void init(AttributeSet attrs, int style) {
 
         progressPaint.setAntiAlias(true);
         progressPaint.setStyle(Paint.Style.STROKE);
         progressPaint.setStrokeWidth(dpToPx(mWidth));
         progressPaint.setStrokeCap(Paint.Cap.ROUND);
+        rectF.set(30, 30, dpToPx(300) - 30, dpToPx(300) - 30);
+        test.add(0,(float)270);
+        }
 
-        rectF.set(30,30,dpToPx(300)-30,dpToPx(300)-30);
-    }
+
 
     @Override
     protected synchronized void onDraw(Canvas canvas) {
-        drawlist(list,canvas);
-        super.onDraw(canvas);
-    }
-
-    public int dpToPx(int dp) {
-        float density = getResources().getDisplayMetrics().density;
-        return Math.round((float) dp * density);
-    }
-
-    public void drawlist(List<percent> list, Canvas canvas){
-        this.list = list;
-        if (list != null){
-            Log.d("test",list.get(0).grade);
-            for (int i=0; i<list.size(); i++){
-                sum += list.get(i).percent;
-            }
+        if (list != null) {
             for (int i = 0; i < list.size(); i++) {
-                count = list.get(i).percent;
                 switch (list.get(i).grade) {
                     case "A+":
-                        progressPaint.setColor(Color.rgb(255,114,114));
-                        canvas.drawArc(rectF, 270, (count/sum)*360, false, progressPaint);
-                        Log.d("test",(list.get(i).percent/sum)*360+"");
+                        progressPaint.setColor(Color.rgb(255, 114, 114));
+                        canvas.drawArc(rectF, test.get(i), (list.get(i).percent/count)*(360-(list.size()*10)), false, progressPaint);
+                        CalculatePosition(i,list.size());
                         break;
                     case "A0":
+                        progressPaint.setColor(Color.rgb(252, 175, 23));
+                        canvas.drawArc(rectF, test.get(i), (list.get(i).percent/count)*(360-(list.size()*10)), false, progressPaint);
+                        CalculatePosition(i,list.size());
                         break;
                     case "B+":
+                        progressPaint.setColor(Color.rgb(186, 234, 0));
+                        canvas.drawArc(rectF, test.get(i), (list.get(i).percent/count)*(360-(list.size()*10)), false, progressPaint);
+                        CalculatePosition(i,list.size());
                         break;
                     case "B0":
+                        progressPaint.setColor(Color.rgb(94, 172, 250));
+                        canvas.drawArc(rectF, test.get(i), (list.get(i).percent/count)*(360-(list.size()*10)), false, progressPaint);
+                        CalculatePosition(i,list.size());
                         break;
                     case "C+":
+                        progressPaint.setColor(Color.rgb(221, 140, 226));
+                        canvas.drawArc(rectF, test.get(i), (list.get(i).percent/count)*(360-(list.size()*10)), false, progressPaint);
+                        CalculatePosition(i,list.size());
                         break;
                     case "C0":
+                        progressPaint.setColor(Color.rgb(204, 204, 204));
+                        canvas.drawArc(rectF, test.get(i), (list.get(i).percent/count)*(360-(list.size()*10)), false, progressPaint);
+                        CalculatePosition(i,list.size());
                         break;
                     case "D+":
                         break;
@@ -93,18 +96,28 @@ public class CustomProgressbar extends ProgressBar {
 
                 }
             }
-//            progressPaint.setColor(Color.rgb(255,114,114));
-//            canvas.drawArc(rectF, 270, 90, false, progressPaint);
-//            progressPaint.setColor(Color.rgb(252,175,23));
-//            canvas.drawArc(rectF, 0+10, 90, false, progressPaint);
-//            progressPaint.setColor(Color.rgb(186,234,0));
-//            canvas.drawArc(rectF, 90+20, 40, false, progressPaint);
-//            progressPaint.setColor(Color.rgb(94,172,250));
-//            canvas.drawArc(rectF, 130+30, 20, false, progressPaint);
-//            progressPaint.setColor(Color.rgb(221,140,226));
-//            canvas.drawArc(rectF, 150+40, 70, false, progressPaint);
-
+            super.onDraw(canvas);
         }
     }
+
+    public int dpToPx(int dp) {
+        float density = getResources().getDisplayMetrics().density;
+        return Math.round((float) dp * density);
+    }
+
+    public void putList(List<percent> list) {
+        this.list = list;
+        for(int i=0;i<list.size();i++){
+            this.count += list.get(i).percent;
+        }
+    }
+    public void CalculatePosition(int position, int size){
+        if(test.get(position)+((list.get(position).percent/count)*(360-(size*10)))>360) {
+            test.add(test.get(position)+((list.get(position).percent/count)*(360-(size*10))) - 350);
+        }
+        else{   test.add(position + 1, test.get(position) + ((list.get(position).percent / count) * (360-(size*10))) + 10);}
+    }
 }
+
+
 

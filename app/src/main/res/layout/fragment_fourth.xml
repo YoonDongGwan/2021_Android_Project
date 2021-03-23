@@ -58,6 +58,7 @@
                 android:textSize="49dp"
                 style="Noto Sans CJK KR"
                 android:includeFontPadding="false"
+                android:id="@+id/most_grade"
                 ></TextView>
             <TextView
                 android:layout_width="wrap_content"
@@ -66,6 +67,7 @@
                 android:textSize="25dp"
                 style="Noto Sans CJK KR"
                 android:textColor="#767676"
+                android:id="@+id/most_percent"
                 >
             </TextView>
         </LinearLayout>
@@ -96,6 +98,8 @@
                 android:layout_height="12dp"
                 android:background="#FF7272"
                 android:layout_gravity="center_vertical"
+                android:id="@+id/colorview1"
+                android:visibility="invisible"
                 ></View>
             <TextView
                 android:layout_width="wrap_content"
@@ -106,15 +110,18 @@
                 android:textColor="#000000"
                 android:layout_marginLeft="4dp"
                 style="Noto Sans CJK KR"
+                android:id="@+id/colorview_text1"
+                android:visibility="invisible"
                 ></TextView>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:text="24%"
-                android:id="@+id/A_plus_percent"
                 android:includeFontPadding="false"
                 style="Noto Sans CJK KR"
+                android:id="@+id/colorview_percent1"
+                android:visibility="invisible"
                 ></TextView>
             </LinearLayout>
             <LinearLayout
@@ -128,6 +135,8 @@
                     android:layout_height="12dp"
                     android:background="#FCAF17"
                     android:layout_gravity="center_vertical"
+                    android:id="@+id/colorview2"
+                    android:visibility="invisible"
                     ></View>
                 <TextView
                     android:layout_width="wrap_content"
@@ -138,15 +147,18 @@
                     android:textColor="#000000"
                     android:layout_marginLeft="4dp"
                     style="Noto Sans CJK KR"
+                    android:id="@+id/colorview_text2"
+                    android:visibility="invisible"
                     ></TextView>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
-                    android:id="@+id/A_zero_percent"
                     style="Noto Sans CJK KR"
+                    android:id="@+id/colorview_percent2"
+                    android:visibility="invisible"
                     ></TextView>
             </LinearLayout>
         </LinearLayout>
@@ -166,6 +178,8 @@
                     android:layout_height="12dp"
                     android:background="#BAEA00"
                     android:layout_gravity="center_vertical"
+                    android:id="@+id/colorview3"
+                    android:visibility="invisible"
                     ></View>
                 <TextView
                     android:layout_width="wrap_content"
@@ -176,15 +190,18 @@
                     android:textColor="#000000"
                     android:layout_marginLeft="4dp"
                     style="Noto Sans CJK KR"
+                    android:id="@+id/colorview_text3"
+                    android:visibility="invisible"
                     ></TextView>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
-                    android:id="@+id/B_plus_percent"
+                    android:id="@+id/colorview_percent3"
                     style="Noto Sans CJK KR"
+                    android:visibility="invisible"
                     ></TextView>
             </LinearLayout>
             <LinearLayout
@@ -198,6 +215,8 @@
                     android:layout_height="12dp"
                     android:background="#5EACFA"
                     android:layout_gravity="center_vertical"
+                    android:id="@+id/colorview4"
+                    android:visibility="invisible"
                     ></View>
                 <TextView
                     android:layout_width="wrap_content"
@@ -208,15 +227,18 @@
                     android:textColor="#000000"
                     android:layout_marginLeft="4dp"
                     style="Noto Sans CJK KR"
+                    android:id="@+id/colorview_text4"
+                    android:visibility="invisible"
                     ></TextView>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
-                    android:id="@+id/B_zero_percent"
+                    android:id="@+id/colorview_percent4"
                     style="Noto Sans CJK KR"
+                    android:visibility="invisible"
                     ></TextView>
             </LinearLayout>
         </LinearLayout>
@@ -236,6 +258,8 @@
                     android:layout_height="12dp"
                     android:background="#DD8CE2"
                     android:layout_gravity="center_vertical"
+                    android:id="@+id/colorview5"
+                    android:visibility="invisible"
                     ></View>
                 <TextView
                     android:layout_width="wrap_content"
@@ -246,15 +270,18 @@
                     android:textColor="#000000"
                     android:layout_marginLeft="4dp"
                     style="Noto Sans CJK KR"
+                    android:id="@+id/colorview_text5"
+                    android:visibility="invisible"
                     ></TextView>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
-                    android:id="@+id/C_plus_percent"
+                    android:id="@+id/colorview_percent5"
                     style="Noto Sans CJK KR"
+                    android:visibility="invisible"
                     ></TextView>
             </LinearLayout>
             <LinearLayout
@@ -268,6 +295,8 @@
                     android:layout_height="12dp"
                     android:background="#CCCCCC"
                     android:layout_gravity="center_vertical"
+                    android:id="@+id/colorview6"
+                    android:visibility="invisible"
                     ></View>
                 <TextView
                     android:layout_width="wrap_content"
@@ -278,15 +307,18 @@
                     android:textColor="#000000"
                     android:layout_marginLeft="4dp"
                     style="Noto Sans CJK KR"
+                    android:id="@+id/colorview_text6"
+                    android:visibility="invisible"
                     ></TextView>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:text="24%"
                     android:includeFontPadding="false"
-                    android:id="@+id/C_zero_percent"
+                    android:id="@+id/colorview_percent6"
                     style="Noto Sans CJK KR"
+                    android:visibility="invisible"
                     ></TextView>
             </LinearLayout>
         </LinearLayout>
