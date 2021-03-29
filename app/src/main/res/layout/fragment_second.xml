@@ -19,8 +19,8 @@
         app:layout_constraintRight_toRightOf="parent"
         >
     <com.dinuscxj.progressbar.CircleProgressBar
-        android:layout_width="310dp"
-        android:layout_height="310dp"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
         android:layout_gravity="center"
         app:progress_stroke_width="20dp"
         app:progress_stroke_cap="round"

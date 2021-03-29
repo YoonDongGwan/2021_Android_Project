@@ -15,7 +15,6 @@
         android:title="계산기" />
     <item
         android:title="마이페이지"
-        
         android:icon="@drawable/mypage_icon"
         android:id="@+id/mypage"
         />

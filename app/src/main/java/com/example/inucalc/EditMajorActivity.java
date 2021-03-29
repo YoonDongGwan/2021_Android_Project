@@ -1,8 +1,5 @@
 package com.example.inucalc;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,58 +15,62 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class StartActivity extends AppCompatActivity {
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
+public class EditMajorActivity extends AppCompatActivity {
     Button btn_m;
     Button btn_s;
     Button button;
-    Button btn_page1;
+    Button btn_change;
 
     AlertDialog.Builder builder;
 
     String[] List;
 
-    int flag1=0;
-    int flag2=0;
-    int flag3=0;
-    int flag=0;
-    String major="";
+    int flag1 = 0;
+    int flag2 = 0;
+    int flag3 = 0;
+    int flag = 0;
+    String major = "";
     String sID;
-    String major2="";
-    String submajor="복수전공(연계전공)";
-    int pressDown=0;
+    String major2 = "";
+    String submajor = "복수전공(연계전공)";
+    int pressDown = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        setContentView(R.layout.activity_editmajor);
 
         btn_m = findViewById(R.id.btn_major2);
         btn_s = findViewById(R.id.btn_sID2);
         button = findViewById(R.id.addMajor2);
-        btn_page1=findViewById(R.id.btn_change);
+        btn_change = findViewById(R.id.btn_change);
 
-        SharedPreferences check = getSharedPreferences("check",MODE_PRIVATE);
+        SharedPreferences check = getSharedPreferences("check", MODE_PRIVATE);
         SharedPreferences.Editor editor = check.edit();
-        editor.putBoolean("page",false);
+        editor.putBoolean("page", false);
         editor.commit();
 
         // 전공, 학번 선택
         btn_m.setOnClickListener(new View.OnClickListener() {
-            int i=0;
-            String ti="전공선택";
+            int i = 0;
+            String ti = "전공선택";
+
             @Override
             public void onClick(View v) {
-                showDialog(ti,i);
+                showDialog(ti, i);
             }
         });
         btn_s.setOnClickListener(new View.OnClickListener() {
-            int i=1;
-            String ti="학번선택";
+            int i = 1;
+            String ti = "학번선택";
+
             @Override
             public void onClick(View v) {
-                showDialog(ti,i);
+                showDialog(ti, i);
             }
         });
         // frame 추가
@@ -80,23 +81,20 @@ public class StartActivity extends AppCompatActivity {
                 FrameLayout contentFrame = findViewById(R.id.frame); // 1. 기반이 되는 FrameLayout
                 LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE); // 2. inflater 생성
                 inflater.inflate(R.layout.addinfo, contentFrame, true); // 3. (넣을 xml 파일명, 기반 layout 객체, true)
-                flag=1;
+                flag = 1;
                 btn_check();
 
-                RadioGroup rg=findViewById(R.id.radioGroup);
-                RadioButton radio1=findViewById(R.id.radio1);
-                RadioButton radio2=findViewById(R.id.radio2);
+                RadioGroup rg = findViewById(R.id.radioGroup);
+                RadioButton radio1 = findViewById(R.id.radio1);
+                RadioButton radio2 = findViewById(R.id.radio2);
 
                 rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        if(checkedId==R.id.radio1)
-                        {
-                            submajor=radio1.getText().toString();
-                        }
-                        else if( checkedId==R.id.radio2)
-                        {
-                            submajor=radio2.getText().toString();
+                        if (checkedId == R.id.radio1) {
+                            submajor = radio1.getText().toString();
+                        } else if (checkedId == R.id.radio2) {
+                            submajor = radio2.getText().toString();
                         }
                     }
                 });
@@ -105,56 +103,53 @@ public class StartActivity extends AppCompatActivity {
                 // 복수전공 추가
                 Button btn_FM = findViewById(R.id.btn_FM);
                 btn_FM.setOnClickListener(new View.OnClickListener() {
-                    int i=2;
-                    String ti="전공선택";
+                    int i = 2;
+                    String ti = "전공선택";
+
                     @Override
                     public void onClick(View v) {
-                        flag=1;
-                        showDialog(ti,i);
+                        flag = 1;
+                        showDialog(ti, i);
                         btn_check();
                     }
                 });
                 // frame cancel button
-                ImageButton btn_cancle=findViewById(R.id.btn_cancel);
+                ImageButton btn_cancle = findViewById(R.id.btn_cancel);
                 btn_cancle.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         contentFrame.removeAllViews();
                         button.setVisibility(button.VISIBLE);
-                        flag=0; flag3=0;
+                        flag = 0;
+                        flag3 = 0;
                         btn_check();
                     }
                 });
 
             }
         });
-        btn_page1.setOnClickListener(new View.OnClickListener() {
+        btn_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(pressDown==1) {
-                    SharedPreferences checkstart = getSharedPreferences("ckeckstart",MODE_PRIVATE);
+                if (pressDown == 1) {
+                    SharedPreferences checkstart = getSharedPreferences("ckeckstart", MODE_PRIVATE);
                     SharedPreferences.Editor editor2 = checkstart.edit();
-                    editor2.putBoolean("startpage",true);
+                    editor2.putBoolean("startpage", true);
                     editor2.commit();
 
-                    SharedPreferences uInfo = getSharedPreferences("uInfo",MODE_PRIVATE);
+                    SharedPreferences uInfo = getSharedPreferences("uInfo", MODE_PRIVATE);
                     SharedPreferences.Editor editor = uInfo.edit();
-                    editor.putString("major",major);
-                    editor.putString("sId",sID);
-                    if(flag3==1)
-                    {
-                        editor.putString("sub",submajor);
-                        editor.putString("subname",major2);
-                    }
-                    else
-                    {
-                        editor.putString("sub","0");
-                        editor.putString("subname","0");
+                    editor.putString("major", major);
+                    editor.putString("sId", sID);
+                    if (flag3 == 1) {
+                        editor.putString("sub", submajor);
+                        editor.putString("subname", major2);
+                    } else {
+                        editor.putString("sub", "0");
+                        editor.putString("subname", "0");
                     }
                     editor.commit();
-
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
+                    setResult(RESULT_OK);
                     finish();
                 }
             }
@@ -164,60 +159,51 @@ public class StartActivity extends AppCompatActivity {
     }
 
     //다이얼로그 실행
-    public void showDialog(String ti,int i){
-        if (i==0 || i==2) List=getResources().getStringArray(R.array.majorList);
-        else if(i==1) List=getResources().getStringArray(R.array.sIDList);
-        builder=new AlertDialog.Builder(StartActivity.this);
+    public void showDialog(String ti, int i) {
+        if (i == 0 || i == 2) List = getResources().getStringArray(R.array.majorList);
+        else if (i == 1) List = getResources().getStringArray(R.array.sIDList);
+        builder = new AlertDialog.Builder(EditMajorActivity.this);
         builder.setTitle(ti);
-        builder.setNegativeButton("닫기",null);
+        builder.setNegativeButton("닫기", null);
         //다이얼로그에 리스트 담기
         builder.setItems(List, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 View view3 = findViewById(R.id.view3);
                 TextView textView = findViewById(R.id.textView);
-                if(i==0) {
+                if (i == 0) {
                     btn_m.setTextColor(Color.parseColor("#000000"));
                     btn_m.setText(List[which]);
-                    major=List[which];
-                    flag1=1;
-                    if(flag3==1)
-                    {
-                        if(major2.equals(major))
-                        {
+                    major = List[which];
+                    flag1 = 1;
+                    if (flag3 == 1) {
+                        if (major2.equals(major)) {
                             view3.setBackgroundColor(Color.parseColor("#FF0000"));
                             textView.setVisibility(textView.VISIBLE);
-                            flag1=0;
-                        }
-                        else
-                        {
+                            flag1 = 0;
+                        } else {
                             view3.setBackgroundColor(Color.parseColor("#F0F0F0"));
                             textView.setVisibility(textView.INVISIBLE);
                         }
                     }
 
-                }
-                else if(i==1) {
+                } else if (i == 1) {
                     btn_s.setTextColor(Color.parseColor("#000000"));
                     btn_s.setText(List[which]);
-                    sID=List[which];
-                    flag2=1;
-                }
-                else {
+                    sID = List[which];
+                    flag2 = 1;
+                } else {
                     Button btn_FM = findViewById(R.id.btn_FM);
                     btn_FM.setTextColor(Color.parseColor("#000000"));
-                    major2=List[which];
+                    major2 = List[which];
                     btn_FM.setText(major2);
-                    flag3=1;
-                    if(flag1==1)
-                    {
+                    flag3 = 1;
+                    if (flag1 == 1) {
                         if (major.equals(major2)) {
                             view3.setBackgroundColor(Color.parseColor("#FF0000"));
                             textView.setVisibility(textView.VISIBLE);
-                            flag3=0;
-                        }
-                        else
-                        {
+                            flag3 = 0;
+                        } else {
                             view3.setBackgroundColor(Color.parseColor("#F0F0F0"));
                             textView.setVisibility(textView.INVISIBLE);
                         }
@@ -231,33 +217,24 @@ public class StartActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    public void btn_check()
-    {
-        if(flag==0)
-        {
-            if(flag1==1 && flag2==1)
-            {
-                btn_page1.setBackgroundColor(Color.parseColor("#FCAF17"));
-                pressDown=1;
+    public void btn_check() {
+        if (flag == 0) {
+            if (flag1 == 1 && flag2 == 1) {
+                btn_change.setBackgroundColor(Color.parseColor("#FCAF17"));
+                pressDown = 1;
+            } else {
+                btn_change.setBackgroundColor(Color.parseColor("#E4E4E4"));
+                pressDown = 0;
             }
-            else
-            {
-                btn_page1.setBackgroundColor(Color.parseColor("#E4E4E4"));
-                pressDown=0;
-            }
-        }
-        else
-        {
-            if(flag1==1 && flag2==1 && flag3==1)
-            {
-                btn_page1.setBackgroundColor(Color.parseColor("#FCAF17"));
-                pressDown=1;
-            }
-            else
-            {
-                btn_page1.setBackgroundColor(Color.parseColor("#E4E4E4"));
-                pressDown=0;
+        } else {
+            if (flag1 == 1 && flag2 == 1 && flag3 == 1) {
+                btn_change.setBackgroundColor(Color.parseColor("#FCAF17"));
+                pressDown = 1;
+            } else {
+                btn_change.setBackgroundColor(Color.parseColor("#E4E4E4"));
+                pressDown = 0;
             }
         }
     }
 }
+

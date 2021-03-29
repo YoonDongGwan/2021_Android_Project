@@ -80,6 +80,8 @@
         android:textSize="14dp"
         style="Noto Sans CJK KR"
         app:layout_constraintTop_toBottomOf="@+id/mypage_info"
+        android:drawableRight="@drawable/mypage_btn"
+        android:paddingRight="20dp"
         ></Button>
 
     <Button
@@ -94,6 +96,8 @@
         android:textSize="14dp"
         style="Noto Sans CJK KR"
         app:layout_constraintTop_toBottomOf="@+id/mypage_btn1"
+        android:drawableRight="@drawable/mypage_btn"
+        android:paddingRight="20dp"
         ></Button>
 
     <Button
@@ -105,7 +109,10 @@
         android:text="버전 정보"
         android:textColor="@color/black"
         android:textSize="14dp"
+        android:id="@+id/mypage_btn3"
         style="Noto Sans CJK KR"
         app:layout_constraintTop_toBottomOf="@+id/mypage_btn2"
+        android:drawableRight="@drawable/mypage_btn"
+        android:paddingRight="20dp"
         ></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
