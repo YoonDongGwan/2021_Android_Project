@@ -1,5 +1,6 @@
 package com.example.inucalc;
 
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,6 +72,16 @@ public class thirdFragment extends Fragment {
                     progress = (int) ((avg / 4.5) * 100);
                     total_score.setText(Math.round(avg * 100) / 100.0 + "");
                     circleProgressBar.setProgress(progress);
+                    ValueAnimator animator = ValueAnimator.ofInt(0, progress);
+                    animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        @Override
+                        public void onAnimationUpdate(ValueAnimator animation) {
+                            int on_progress = (int) animation.getAnimatedValue();
+                            circleProgressBar.setProgress(on_progress);
+                        }
+                    });
+                    animator.setDuration(500);
+                    animator.start();
                 }
             }
         });

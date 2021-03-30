@@ -95,13 +95,25 @@ public class fourthFragment extends Fragment {
                             colorviews[i].setVisibility(View.VISIBLE);
                             colorview_text[i].setVisibility(View.VISIBLE);
                             colorview_percent[i].setVisibility(View.VISIBLE);
-                            colorviews[i].setBackgroundColor(Color.rgb(204, 204, 204));
+                            colorviews[i].setBackgroundColor(Color.rgb(0, 234, 164));
                             colorview_text[i].setText("C0");
                             colorview_percent[i].setText((int) ((percents.get(i).percent / count) * 100) + "%");
                             break;
                         case "D+":
+                            colorviews[i].setVisibility(View.VISIBLE);
+                            colorview_text[i].setVisibility(View.VISIBLE);
+                            colorview_percent[i].setVisibility(View.VISIBLE);
+                            colorviews[i].setBackgroundColor(Color.rgb(255, 109, 182));
+                            colorview_text[i].setText("D+");
+                            colorview_percent[i].setText((int) ((percents.get(i).percent / count) * 100) + "%");
                             break;
                         case "D0":
+                            colorviews[i].setVisibility(View.VISIBLE);
+                            colorview_text[i].setVisibility(View.VISIBLE);
+                            colorview_percent[i].setVisibility(View.VISIBLE);
+                            colorviews[i].setBackgroundColor(Color.rgb(123, 227, 243));
+                            colorview_text[i].setText("D0");
+                            colorview_percent[i].setText((int) ((percents.get(i).percent / count) * 100) + "%");
                             break;
                     }
                     if (temp_percent < percentList.get(i).percent) {
