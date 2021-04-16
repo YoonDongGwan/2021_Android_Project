@@ -5,18 +5,27 @@
     android:layout_height="41dp"
     android:orientation="horizontal"
     >
+
     <CheckBox
-        android:layout_width="164dp"
+        android:id="@+id/checkBox2"
+        android:layout_width="30dp"
+        android:layout_height="41dp"
+        android:background="@drawable/right_stroke"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="140dp"
         android:layout_height="match_parent"
-        android:text="과목명과목명"
-        android:textSize="12dp"
+        android:background="@drawable/right_stroke"
         android:gravity="center_vertical"
         android:includeFontPadding="false"
-        android:textColor="#000000"
-        android:background="@drawable/right_stroke"
         android:paddingStart="16dp"
-        >
-    </CheckBox>
+        android:text="과목명과목명"
+        android:textColor="#000000"
+        android:textSize="12dp"></TextView>
+
     <TextView
         android:layout_width="54dp"
         android:layout_height="match_parent"
@@ -35,13 +44,13 @@
         android:gravity="center"
         android:background="@drawable/right_stroke"
         ></TextView>
+
     <TextView
-        android:layout_width="54dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="#000000"
-        android:text="A+"
-        android:textSize="12dp"
-        android:gravity="center"
         android:background="#FFFFFF"
-        ></TextView>
+        android:gravity="center"
+        android:text="A+"
+        android:textColor="#000000"
+        android:textSize="12dp"></TextView>
 </LinearLayout>

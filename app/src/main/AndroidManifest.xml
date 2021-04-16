@@ -17,6 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".oneoneActivity" />
+        <activity android:name=".onetwoActivity" />
+        <activity android:name=".twooneActivity" />
+        <activity android:name=".twotwoActivity" />
+        <activity android:name=".threeoneActivity" />
+        <activity android:name=".threetwoActivity" />
+        <activity android:name=".fouroneActivity" />
+        <activity android:name=".fourtwoActivity" />
         <activity android:name=".CalcuActivity" />
     </application>
 

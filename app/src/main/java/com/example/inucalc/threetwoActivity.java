@@ -48,8 +48,8 @@ import java.util.ArrayList;
 
 import static android.widget.Toast.LENGTH_LONG;
 
-public class oneoneActivity extends AppCompatActivity{
 
+public class threetwoActivity extends AppCompatActivity {
     String[] List;
     AlertDialog.Builder builder;
     Button btn_page;
@@ -64,12 +64,12 @@ public class oneoneActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_plus_1_1);
-        btn_plus=findViewById(R.id.insert_btn);
+        setContentView(R.layout.fragment_plus_3_2);
+        btn_plus=findViewById(R.id.button_plus);
         btn_return=findViewById(R.id.button_return);
         btn_delete=findViewById(R.id.button_delete);
 
-        RecyclerView recyclerView = findViewById(R.id.MyRecyclerView);
+        RecyclerView recyclerView = findViewById(R.id.cellRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         RecyclerAdapter2 adapter = new RecyclerAdapter2();
         recyclerView.setAdapter(adapter);

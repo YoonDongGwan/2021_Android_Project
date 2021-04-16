@@ -115,7 +115,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="더 입력하기"
@@ -125,7 +125,7 @@
         tools:layout_editor_absoluteY="597dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="선택항목 지우기"

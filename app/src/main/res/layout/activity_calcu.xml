@@ -6,19 +6,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".CalcuActivity">
 
-<ImageButton
+    <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_back"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:background="#00000000"
+        android:padding="2dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="17.14dp"
-        android:layout_marginTop="17.32dp"
-        android:padding="2dp"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="195dp" />
+        app:srcCompat="@drawable/ic_back" />
 
     <TextView
         android:id="@+id/tv1_1"

@@ -1,6 +1,7 @@
 package com.example.inucalc;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
@@ -36,13 +38,14 @@ import java.util.List;
 public class cellFragment extends Fragment {
     private Context mContext;
     private TabLayout mTablayout;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_cell, container, false);
         ViewPager2 viewPager = v.findViewById(R.id.viewpager3);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager(),getLifecycle());
+        ViewPagerAdapter2 adapter = new ViewPagerAdapter2(getChildFragmentManager(),getLifecycle());
         adapter.addFragment(new oneoneFragment());
         adapter.addFragment(new onetwoFragment());
         adapter.addFragment(new twooneFragment());
@@ -54,11 +57,11 @@ public class cellFragment extends Fragment {
         viewPager.setAdapter(adapter);
         TabLayout tabLayout = v.findViewById(R.id.tablayout2);
 
-        mTablayout=(TabLayout)v.findViewById(R.id.tablayout2);
-        mTablayout.addTab(mTablayout.newTab().setText("홈"));
-        mTablayout.addTab(mTablayout.newTab().setText("게임"));
-        mTablayout.addTab(mTablayout.newTab().setText("영화"));
-        mTablayout.addTab(mTablayout.newTab().setText("도서서"));
+        // mTablayout=(TabLayout)v.findViewById(R.id.tablayout2);
+        //mTablayout.addTab(mTablayout.newTab().setText("홈"));
+        //mTablayout.addTab(mTablayout.newTab().setText("게임"));
+        //mTablayout.addTab(mTablayout.newTab().setText("영화"));
+        //mTablayout.addTab(mTablayout.newTab().setText("도서서"));
 
        String[] tabLabel = {"1학년 1학기","1학년 2학기","2학년 1학기","2학년 2학기", "3학년 1학기", "3학년 2학기", "4학년 1학기", "4학년 2학기"};
         new TabLayoutMediator(tabLayout, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
@@ -68,6 +71,7 @@ public class cellFragment extends Fragment {
                 tab.setText(tabLabel[position]);
             }
         }).attach();
+
         return v;
     }
 
